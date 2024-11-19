@@ -29,11 +29,11 @@ Credit:
 
 1. Open **CMD** as Administrator.
 
-![CMD-win-search](CMD-win-search.png)
+![CMD-win-search](screenshots/CMD-win-search.png)
 
 2. Command: `netstat -nbf` 
 
-![CMD-Command--netstat-nbf](CMD-Command--netstat-nbf.png)
+![CMD-Command--netstat-nbf](screenshots/CMD-Command--netstat-nbf.png)
 
 ### Focus on ESTABLISHED State
 
@@ -59,25 +59,25 @@ To verify if it has ended, return to the first command and check if it's gone. I
 
 If you find the CLI confusing, don't worry! There's a more user-friendly way to do this in GUI mode. The previous steps were for the techy folks—now let's head to the GUI for a simpler approach.
 
-![Sysinternals-Suite](Sysinternals-Suite.png)
+![Sysinternals-Suite](screenshots/Sysinternals-Suite.png)
 
 ### Download and Extract This Tool
 
 It has lots of interesting programs you can use for System Monitoring, Diagnostics, Malware Analysis, Troubleshooting, File and Disk Management, etc.
 
-![tcpview64-In-Explorer](tcpview64-In-Explorer.png)
+![tcpview64-In-Explorer](screenshots/tcpview64-In-Explorer.png)
 
 ### These Are All the Same Connections We Observed in the CLI
 
 But with icons and in a more user-friendly form.
 
-![tcpview64](tcpview64.png)
+![tcpview64](screenshots/tcpview64.png)
 
 ### To Learn More About the Processes
 
 Simply right-click and select **Process Properties**. Here, you'll find the file path information. Just click **Explore**, and a window will open showing where the file is located.
 
-![tcpview64-options](tcpview64-options.png)
+![tcpview64-options](screenshots/tcpview64-options.png)
 
 ### And the Main Part Here
 
@@ -117,23 +117,23 @@ We will cover three different locations where startup programs are configured to
 
 1. Hit **CTRL+SHIFT+ESC** to open **Task Manager** and go to the **Startup apps** tab.
 
-![task-manager](task-manager.png)
+![task-manager](screenshots/task-manager.png)
 
    - Here, you can see all the programs that run at startup. If any of them look suspicious, right-click on the program and select **Disable**.
 
 2. Hit **WIN+R** to open the **Run** command, then type: `shell:startup`.
 
-![run-opening-startup-folder](run-opening-startup-folder.png)
+![run-opening-startup-folder](screenshots/run-opening-startup-folder.png)
 
    - Hit **Enter** or click **OK**, and a window will open showing the startup folder.
 
-![startup-folder](startup-folder.png)
+![startup-folder](screenshots/startup-folder.png)
 
   - If you notice anything suspicious here (any unknown app), you can either delete it directly or explore the file path and remove the entire folder if necessary.
 
 3. Hit **WIN+R** and type `regedit` to open the **Windows Registry Editor**. Then, navigate to the following path:
 ```Computer\HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run```
 
-![regedit](regedit.png)
+![regedit](screenshots/regedit.png)
 
   - If you find something suspicious, just delete the program. But be careful—deleting certain programs can break your OS. Make sure you have a backup before making any modifications.

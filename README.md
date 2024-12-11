@@ -137,3 +137,50 @@ We will cover three different locations where startup programs are configured to
 ![regedit](screenshots/regedit.png)
 
   - If you find something suspicious, just delete the program. But be careful—deleting certain programs can break your OS. Make sure you have a backup before making any modifications.
+
+## Check Digital Signatures and Identify Suspicious Files: Process Explorer (ProcExp)
+
+Using Process Explorer (ProcExp) to check a process's digital signature is an effective way to spot potentially suspicious files running on your system. By following the steps outlined above, you can easily identify unsigned processes or those with invalid or malicious signatures. This is a key step in protecting your system from malware and ensuring that all running processes are legitimate.
+If you find a suspicious process, take immediate action by terminating the process and running additional scans to ensure your system's security.
+
+In this guide, we'll walk through how to use **Process Explorer (ProcExp)** from the **Sysinternals Suite** to check the digital signature of a process and determine whether it might be suspicious.
+
+### What You Will Need:
+- **Process Explorer (ProcExp)** from the Sysinternals Suite 
+- The file or process you wish to analyze
+
+---
+
+## Step 1: Download and Open Process Explorer (ProcExp)
+
+1. **Download ProcExp**:
+   - Go to the [Sysinternals Process Explorer page](https://learn.microsoft.com/en-us/sysinternals/downloads/process-explorer).
+     ![CMD-win-search](screenshots/1stProcExp.png)
+   - Download **Process Explorer** from the site. (if you have followed the Steps then you can skip this step. You should have this tool in you **Sysinternal Suite** Folder)
+     ![CMD-win-search](screenshots/2ndProcExp.png)
+
+2. **Launch Process Explorer**:
+   - Extract the downloaded **.zip** file and run **procexp.exe** from the extracted folder. (or **procexp64.exe** according to your Arch)
+     ![CMD-win-search](screenshots/3rdProcExp.png)
+     ![CMD-win-search](screenshots/4thProcExp.png)
+     ![CMD-win-search](screenshots/5thProcExp.png)
+   - Process Explorer will open, showing a list of running processes on your system.
+     ![CMD-win-search](screenshots/6thProcExp.png)
+
+3. **ProcExp Configuration**:
+   - Go to the menu bar at the top of **ProcExp**
+   - Click on **Options** → **Verify Image Signatures** and in **VirusTotal.com** → Check the **Check VirusTotal.com and Submit Unknown Executables**.
+     ![CMD-win-search](screenshots/7thProcExp.png)
+   - After you select the **Check VirusTotal.com** option, a browser will open, displaying the Terms of Service (TOS). Read it and click Yes to proceed.
+     ![CMD-win-search](screenshots/8thProcExp.png)
+After selecting these option, you'll see a new tab or column appear. This tab will provide the **VirusTotal** scan results, which allow you to check whether the process or executable is flagged as suspicious or malicious by various antivirus engines.
+![CMD-win-search](screenshots/9thProcExp.png)
+The **VirusTotal** column will provide Hits (don't worry about those, just know that if the score is high and it's red, it could indicate a malicious file). The **Verified Signer** will basically show you the owner of the file (you'll often see 'Microsoft Windows').
+
+### Tip: Look for processes that are not verified and those with a high score or marked red in the VirusTotal column.
+
+4. **Killing Suspicious Processes**
+   - Right Click on the suspicious process and hit **Kill Process**
+     ![CMD-win-search](screenshots/10thProcExp.png)
+
+---
